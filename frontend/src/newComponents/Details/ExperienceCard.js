@@ -1,10 +1,14 @@
 //Experiance Section in form
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 function ExperienceCard(props) {
 
   const [inputFields, setInputFields] = useState([{}]);                   //To keep track of data entered by user
+  
+  useEffect(()=>{
+    props.parentCallback(inputFields);
+  },[inputFields])
 
   // Add new Experence field Dynamically
   const addFields = (event) => {
@@ -30,13 +34,7 @@ function ExperienceCard(props) {
 
   return (
     <div>
-      <div
-        className="groupField"
-        onChange={(e) => {
-          e.preventDefault();
-          props.parentCallback(inputFields);
-        }}
-      >
+      <div className="groupField">
         {inputFields.map((input, index) => {
           return (
             <div className="field" key={index}>

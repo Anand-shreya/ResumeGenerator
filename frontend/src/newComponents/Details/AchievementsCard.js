@@ -1,9 +1,13 @@
 //Achievements section in form
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 function AchievementsCard(props) {
   const [inputFields, setInputFields] = useState([{}]);                 //Keep Track of data entered by user
+  
+  useEffect(()=>{
+    props.parentCallback(inputFields);
+  },[inputFields])
 
   //To add a new Achievement dynamically
   const addFields = (event) => {
@@ -28,12 +32,7 @@ function AchievementsCard(props) {
 
   return (
     <div
-      className="groupField"
-      onChange={(e) => {
-        e.preventDefault();
-        props.parentCallback(inputFields);
-      }}
-    >
+      className="groupField" >
       {inputFields.map((input, index) => {
         return (
           <div className="field" key={index}>

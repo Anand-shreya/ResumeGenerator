@@ -1,10 +1,15 @@
 // Education SEction of Form
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 function EducationCard(props) {
 
   const [inputFields, setInputFields] = useState([{}]);                           //To keep track of data entered by user
+
+  
+  useEffect(()=>{
+    props.parentCallback(inputFields);
+  },[inputFields])
 
   //To add new Education Detail Dynamically
   const addFields = (event) => {
@@ -29,13 +34,7 @@ function EducationCard(props) {
 
   return (
     <div>
-      <div
-        className="groupField"
-        onChange={(e) => {
-          e.preventDefault();
-          props.parentCallback(inputFields);
-        }}
-      >
+      <div className="groupField">
         {inputFields.map((input, index) => {
           return (
             <div className="field" key={index}>
