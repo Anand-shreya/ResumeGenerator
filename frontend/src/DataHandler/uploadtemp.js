@@ -51,7 +51,7 @@ const UploadTemp = (props) => {
      
     };
     return (
-          <div>
+          <div className='upload_box'>
             <input
               type="file"
               accept=".doc, .docx"
@@ -60,7 +60,7 @@ const UploadTemp = (props) => {
             //   style={{ display: 'none' }}
               onChange={handleFileChange}
             />
-            <button onClick={handleUploadClick} >Upload</button>
+            <button className='upload_btn' onClick={handleUploadClick} >Upload</button>
           </div>
     )
   }

@@ -23,20 +23,21 @@ function SkillsCard(props) {
         data[index] = event.target.value;
         // setInputFields(inputFields=>({...inputFields,index:event.target.value}));
         setInputFields(data);
+        console.log(inputFields);
      }
     // },[inputFields])
   return (
 
     
-    <div className="App">
-      <div onChange={e=>{
+
+      <div className="groupField"onChange={e=>{
             console.log("1")
             e.preventDefault();
             props.parentCallback(inputFields);
         }}> 
         {inputFields.map((input, index) => {
           return (
-            <div key={index}>
+            <div className='field' key={index}>
               <input
                 name='Type'
                 type='text'
@@ -49,10 +50,11 @@ function SkillsCard(props) {
             </div>
           )
         })}
-      </div>
-      <button onClick={addFields}>Add Skill..</button>
-      <button onClick={removeFields}>Remove Last </button>
-    </div>
+
+      <div className="btn_grp">
+      <button className='add_btn' onClick={addFields}>Add</button>
+      <button className='remove_btn' onClick={removeFields}>Remove </button>
+    </div></div>
   );
 }
 

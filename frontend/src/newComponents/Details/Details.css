@@ -1,0 +1,154 @@
+.choice_main{
+    width: 80%;
+    height: 70vh;
+    position: relative;
+    left:200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:10vh
+}
+.upload_btn1{
+    text-decoration: none;
+    width: 165px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 33.5px;
+    background: #146C94;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 101.023%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.choice_form {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 349px;
+    height: 212px;
+    flex-shrink: 0;
+    border-radius: 45px;
+    background: #F6F1F1;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 101.023%;
+    transition: all .5s;
+}
+.choice_form:hover{
+    transform: translateY(-10px);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.choice_input{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap:4vw;
+    position: relative;
+}
+
+input[type=text],[type=email],input[type=tel],input[type=number],textarea{
+    width: 413px;
+height: 35px;
+border-radius: 8px;
+background: #D9D9D9;
+flex-shrink: 0;
+margin: 4px;
+border: 0px;
+padding-left: 10px;
+color: #848282;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 101.023%;
+}
+.name{
+background: #F6F1F1;
+display:flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.fi_main{
+    padding-top: 50px;
+}
+.fi_form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:90px;
+    padding-bottom: 100px;
+}
+.fi_form_each{
+display:flex;
+flex-direction: column;
+align-items: center;
+gap:5px;
+}
+textarea{
+    height: 66px;
+    padding-top:15px;
+}
+.add_btn,.remove_btn{
+    width: 101px;
+    height: 35px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #146C94;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 101.023%;
+    margin: 2px;
+    border: 0px;
+}
+.btn_grp,.field{
+    display: flex;
+    justify-content: flex-end;
+    background-color: #F6F1F1;
+}
+.field{
+    display: flex;
+    flex-direction: column;
+}
+
+.groupField{
+    background-color: #F6F1F1;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.fi_next_btn{
+    text-decoration: none;
+    width: 343px;
+    height: 78px;
+    flex-shrink: 0;
+    border-radius: 33.5px;
+    background: #146C94;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 101.023%;
+    border: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

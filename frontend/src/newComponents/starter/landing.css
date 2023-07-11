@@ -1,0 +1,35 @@
+.landing_main{
+   height: 90vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap:10px;
+align-items: flex-start;
+position: relative;
+left: 150px;
+}
+.landing_step{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    gap:150px;
+    padding:70px 0px;
+}
+.start_btn{
+    text-decoration: none;
+    width: 378px;
+height: 78px;
+flex-shrink: 0;
+border-radius: 33.5px;
+background: #146C94;
+color: #FFF;
+text-align: center;
+font-family: Inter;
+font-size: 30px;
+font-style: normal;
+font-weight: 600;
+line-height: 101.023%;
+display: flex;
+align-items: center;
+justify-content: center;
+}

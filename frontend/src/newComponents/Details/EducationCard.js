@@ -32,7 +32,7 @@ function EducationCard(props) {
         }}> 
         {inputFields.map((input, index) => {
           return (
-            <div key={index}>
+            <div className='field' key={index}>
               <input
                 name='SchoolName'
                 type='text'
@@ -43,6 +43,7 @@ function EducationCard(props) {
               />
               <input
                 name='Year'
+                type='number'
                 placeholder='Duration of study'
                 value={input.Year}
                 onChange={event => handleFormChange(index, event)}
@@ -50,6 +51,7 @@ function EducationCard(props) {
               />
                <input
                 name='Description'
+                type='text'
                 placeholder='Description'
                 value={input.Description}
                 onChange={event => handleFormChange(index, event)}
@@ -59,8 +61,10 @@ function EducationCard(props) {
           )
         })}
       </div>
-      <button onClick={addFields}>Add More..</button>
-      <button onClick={removeFields}>Remove </button>
+      <div className="btn_grp">
+      <button className='add_btn' onClick={addFields}>Add</button>
+      <button className='remove_btn' onClick={removeFields}>Remove </button>
+    </div>
     </div>
   );
 }

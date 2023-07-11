@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function AchievementsCard(props) {
+function ExperienceCard(props) {
  const [inputFields, setInputFields] = useState([
     { }
   ])
@@ -25,25 +25,34 @@ function AchievementsCard(props) {
   return (
 
     
-    <div className="App">
-      <div onChange={e=>{
+    <div >
+      <div className="groupField" onChange={e=>{
             e.preventDefault();
             props.parentCallback(inputFields);
         }}> 
         {inputFields.map((input, index) => {
           return (
-            <div key={index}>
+            <div className='field'key={index}>
               <input
-                name='Type'
+                name='CompanyName'
                 type='text'
-                placeholder='Field'
-                value={input.Type}                
+                placeholder='Company Name'
+                value={input.CompanyName}                
                 onChange={event => handleFormChange(index, event)}
                 required
               />
               <input
+                name='Year'
+                type='number'
+                placeholder='Duration of work'
+                value={input.Year}
+                onChange={event => handleFormChange(index, event)}
+                required
+              />
+               <input
                 name='Description'
-                placeholder='Description of award'
+                type='text'
+                placeholder='Description'
                 value={input.Description}
                 onChange={event => handleFormChange(index, event)}
                 required
@@ -52,10 +61,11 @@ function AchievementsCard(props) {
           )
         })}
       </div>
-      <button onClick={addFields}>Add Achievement..</button>
-      <button onClick={removeFields}>Remove Last </button>
-    </div>
+      <div className="btn_grp">
+      <button className='add_btn' onClick={addFields}>Add</button>
+      <button className='remove_btn' onClick={removeFields}>Remove </button>
+    </div></div>
   );
 }
 
-export default AchievementsCard;
+export default ExperienceCard;

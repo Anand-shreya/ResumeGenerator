@@ -1,5 +1,5 @@
 import React,{useEffect, useRef, useState} from 'react'
-
+import { NavLink } from 'react-router-dom';
 
 
 const UploadData = (props) => {
@@ -57,10 +57,9 @@ const UploadData = (props) => {
               accept="application/json"
               ref={fileInputRef}
               className='Upload'
-            //   style={{ display: 'none' }}
               onChange={handleFileChange}
             />
-            <button onClick={handleUploadClick} >Upload</button>
+            <NavLink className="upload_btn1" to='/temp' onClick={handleUploadClick} >Upload</NavLink>
           </div>
     )
   }

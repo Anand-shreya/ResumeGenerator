@@ -26,27 +26,13 @@ const downloadFile = async () => {
 const Download = () => {
 
     const handleUploadClick = async()=>{
-        //  fetch("http://localhost:8000/download")
-        // // .then (response=>{
-        // //     const filename =  response.headers.get('Content-Disposition').split('filename=')[1];
-        // //  response.blob().then(blob => {
-        // // let url = window.URL.createObjectURL(blob);
-        // // let a = document.createElement('a');
-        // // a.href = url;
-        // // a.download = filename;
-        // // a.click();
-        // // });
-        // // })
-        // .then(res=>{
-        //     console.log(res);
-        // })
         const res = await downloadFile();
         window.location.replace("http://localhost:3000/");
     }
 
 return (
     <div>
-      <button onClick={handleUploadClick}>Download</button>
+      <button className='download_btn' onClick={handleUploadClick}>Download</button>
     </div>
 )
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function ExperienceCard(props) {
+function AchievementsCard(props) {
  const [inputFields, setInputFields] = useState([
     { }
   ])
@@ -25,32 +25,26 @@ function ExperienceCard(props) {
   return (
 
     
-    <div >
+
       <div className="groupField" onChange={e=>{
             e.preventDefault();
             props.parentCallback(inputFields);
         }}> 
         {inputFields.map((input, index) => {
           return (
-            <div key={index}>
+            <div className='field'key={index}>
               <input
-                name='CompanyName'
+                name='Type'
                 type='text'
-                placeholder='Company Name'
-                value={input.CompanyName}                
+                placeholder='Field'
+                value={input.Type}                
                 onChange={event => handleFormChange(index, event)}
                 required
               />
               <input
-                name='Year'
-                placeholder='Duration of work'
-                value={input.Year}
-                onChange={event => handleFormChange(index, event)}
-                required
-              />
-               <input
                 name='Description'
-                placeholder='Description'
+                type='text'
+                placeholder='Description of award'
                 value={input.Description}
                 onChange={event => handleFormChange(index, event)}
                 required
@@ -58,11 +52,13 @@ function ExperienceCard(props) {
             </div>
           )
         })}
-      </div>
-      <button onClick={addFields}>Add More..</button>
-      <button onClick={removeFields}>Remove </button>
+
+      <div className="btn_grp">
+      <button className='add_btn' onClick={addFields}>Add</button>
+      <button className='remove_btn' onClick={removeFields}>Remove </button>
     </div>
+        </div>
   );
 }
 
-export default ExperienceCard;
+export default AchievementsCard;
