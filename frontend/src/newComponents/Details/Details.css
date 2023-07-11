@@ -152,3 +152,8 @@ textarea{
     align-items: center;
     justify-content: center;
 }
+.fi_head{
+    position: relative;
+    left:10vw;
+    margin: 15px 0px;
+}

@@ -18,7 +18,7 @@ function DownloadPage() {
     <div className="downloadPage_main">
       <Txt>Your resume has been generated</Txt>
       <Txt>successfully.</Txt>
-      <Download></Download>                                   //Download Button
+      <Download></Download>                                  {/*} //Download Button*/}
     </div>
   );
 }

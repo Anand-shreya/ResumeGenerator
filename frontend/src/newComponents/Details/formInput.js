@@ -76,9 +76,11 @@ function FormInput() {
 
   return (
     <div className="fi_main">
-      <Head num="1" step="Upload data" w="430px" h="73px"></Head>
+        <div className="fi_head">
+            <Head num="1" step="Upload data" w="430px" h="73px"></Head>
+        </div>
       <form className="fi_form" onSubmit={handleSubmit}>
-        <div className="fi_form_each">                                                  //Personal Information section
+        <div className="fi_form_each">                                                 {/* //Personal Information section*/}
           <Tag>a. Personal Information</Tag>
           <Box>
             <div className="name">
@@ -158,7 +160,7 @@ function FormInput() {
           </Box>
         </div>
 
-        <div className="fi_form_each">                                          //Job section
+        <div className="fi_form_each">                                         {/* //Job section*/}
           <Tag>b. Job</Tag>
           <Box>
             <input
@@ -187,7 +189,7 @@ function FormInput() {
           </Box>
         </div>
 
-        <div className="fi_form_each">                                                  //Skill section
+        <div className="fi_form_each">                                                  {/*//Skill section*/}
           <Tag>c. Skills</Tag>
           <Box>
             <SkillsCard
@@ -197,7 +199,7 @@ function FormInput() {
           </Box>
         </div>
 
-        <div className="fi_form_each">                                                   //Education Section
+        <div className="fi_form_each">                                                  {/* //Education Section*/}
           <Tag>d. Education</Tag>
           <Box>
             <EducationCard
@@ -206,7 +208,7 @@ function FormInput() {
           </Box>
         </div>
 
-        <div className="fi_form_each">                                                  //Experince section
+        <div className="fi_form_each">                                                 {/* //Experince section*/}
           <Tag>e. Experience</Tag>
           <Box>
             <ExperienceCard
@@ -215,7 +217,7 @@ function FormInput() {
           </Box>
         </div>
 
-        <div className="fi_form_each">                                                   //Achievement
+        <div className="fi_form_each">                                                  {/* //Achievement*/}
           <Tag>f. Achievements</Tag>
           <Box>
             <AchievementsCard

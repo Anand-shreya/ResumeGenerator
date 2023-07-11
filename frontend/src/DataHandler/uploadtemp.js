@@ -47,9 +47,9 @@ const UploadTemp = (props) => {
         className="Upload"
         onChange={handleFileChange}
       />
-      <button className="upload_btn" onClick={handleUploadClick}>             //upload Button 
+      <button className="upload_btn" onClick={handleUploadClick}>            
         Upload
-      </button>
+      </button>                                                                                 
     </div>
   );
 };

@@ -74,8 +74,8 @@ function Temp_page() {
       redirect: "follow",
     }).then((res) => {
       console.log(res);
-      alert("Resume Generated successfully");
-      navigate("/download");
+      alert("Please wait,Generating...");
+      setTimeout(function(){navigate("/download");},10000);
     });
   };
 
@@ -124,7 +124,7 @@ function Temp_page() {
             console.log(TempType);
           }}
         >
-          <UploadTemp></UploadTemp>                             //To upload custom Template
+        <UploadTemp></UploadTemp>                       {/*To upload custom Template */}
           <Txt>Custom Template</Txt>
         </TempStyle>
       </div>

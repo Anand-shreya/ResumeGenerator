@@ -51,7 +51,7 @@ const UploadData = () => {
         className="Upload"
         onChange={handleFileChange}
       />
-      <button className="upload_btn1" onClick={handleUploadClick}>           //Upload button
+       <button className="upload_btn1" onClick={handleUploadClick}>          {/* Upload button */}
         Upload
       </button>
     </div>

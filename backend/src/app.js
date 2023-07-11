@@ -116,8 +116,8 @@ app.post("/resume", (req, res) => {
   // console.log(PDF_SERVICES_CLIENT_ID);
   const credentials =
     PDFServicesSdk.Credentials.servicePrincipalCredentialsBuilder()
-      .withClientId("PDF_SERVICES_CLIENT_ID")
-      .withClientSecret("PDF_SERVICES_CLIENT_SECRET")
+      .withClientId("6e4c841c769544a399763b2cff2bf251")
+      .withClientSecret("p8e-bIKjv39YsEWvXsHemdsT4tSmGHfBli6c")
       .build();
 
   // Create an ExecutionContext using credentials

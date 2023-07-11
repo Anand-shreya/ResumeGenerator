@@ -30,7 +30,7 @@ const Download = () => {
 
 return (
     <div>
-      <button className='download_btn' onClick={handleUploadClick}>Download</button>      //Download Button
+      <button className='download_btn' onClick={handleUploadClick}>Download</button>      {/*//Download Button*/}
     </div>
 )
 }
