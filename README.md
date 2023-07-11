@@ -35,7 +35,7 @@ export PDF_SERVICES_CLIENT_SECRET=<YOUR CLIENT SECRET>
 Start backend Server
 ```bash
 cd src
-node App.js
+node app.js
 ```
 Backend will run at `port 8000`
 
