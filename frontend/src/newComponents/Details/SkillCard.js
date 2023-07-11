@@ -1,13 +1,17 @@
-import { useEffect, useState } from 'react';
+//Skill section in form
+import {useState } from 'react';
 
 function SkillsCard(props) {
- const [inputFields, setInputFields] = useState([{}])
+
+    const [inputFields, setInputFields] = useState([{}]);                           //To keep Track of data entred by user
+
     const addFields = (event) => {
         event.preventDefault();
         let newfield = {}
     
         setInputFields([...inputFields, newfield])
     }
+
     const removeFields = (event) => {  
         event.preventDefault();
         if(inputFields.length==1)return;  
@@ -15,21 +19,15 @@ function SkillsCard(props) {
         props.parentCallback(inputFields);
     }
  
-    // useEffect(()=>{
+
     const handleFormChange = async( index,event) => {
         let data = [...inputFields];
-        // data.push(event.target.value);
-        // console.log(event.target.value)
         data[index] = event.target.value;
-        // setInputFields(inputFields=>({...inputFields,index:event.target.value}));
         setInputFields(data);
         console.log(inputFields);
      }
-    // },[inputFields])
+
   return (
-
-    
-
       <div className="groupField"onChange={e=>{
             console.log("1")
             e.preventDefault();
@@ -41,7 +39,7 @@ function SkillsCard(props) {
               <input
                 name='Type'
                 type='text'
-                placeholder='Skill'
+                placeholder='Skill Description'
                 value={input.Type}                
                 onChange={async event => { handleFormChange(index, event);}
                 }

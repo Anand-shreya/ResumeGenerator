@@ -1,5 +1,6 @@
+// Choice page; upload JSON or Enter Manually
+
 import UploadData from "../../DataHandler/uploaddata";
-import { useState } from "react";
 import Head from "../head";
 import "./Details.css";
 import styled from "styled-components";
@@ -23,27 +24,25 @@ const Or = styled.div`
   z-index: 1;
 `;
 
-function Choice(props) {
-  const [isDetailEntered, setIsDetailEntered] = useState(false); // To keep Track, Data Entered or Not
+function Choice() {
 
-  const handleUploadCallback = (childData) => {
-    setIsDetailEntered(true);
-    console.log(isDetailEntered);
-  };
   return (
     <div className="choice_main">
       <Head num="1" step="Upload data" w="430px" h="73px"></Head>
       <div className="choice_input">
+
         <div className="choice_form">
           <UploadData
             className="choice_json"
-            parentCallback={handleUploadCallback}
           ></UploadData>
         </div>
+
         <Or>Or</Or>
-        <NavLink className="choice_form" to="/dataForm">
+
+        <NavLink className="choice_form" to="/dataform">
           Update Manually
         </NavLink>
+
       </div>
     </div>
   );

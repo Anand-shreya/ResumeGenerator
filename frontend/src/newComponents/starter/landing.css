@@ -32,4 +32,10 @@ line-height: 101.023%;
 display: flex;
 align-items: center;
 justify-content: center;
+transition: all .5s;
+}
+.start_btn:hover{
+    transform: translateY(-10px);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
 }

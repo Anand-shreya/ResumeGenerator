@@ -1,3 +1,5 @@
+//Resume download page
+
 import Download from "../../DataHandler/download";
 import styled from "styled-components";
 import "./download.css";
@@ -10,12 +12,13 @@ const Txt = styled.div`
   font-weight: 700;
   line-height: 101.023%;
 `;
-function DownloadPage(props) {
+
+function DownloadPage() {
   return (
     <div className="downloadPage_main">
       <Txt>Your resume has been generated</Txt>
       <Txt>successfully.</Txt>
-      <Download></Download>
+      <Download></Download>                                   //Download Button
     </div>
   );
 }

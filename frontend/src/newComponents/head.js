@@ -1,4 +1,5 @@
 import "./head.css";
+
 function Head({num,step,w,h}){
     return(
         <div className="head_main">

@@ -1,7 +1,7 @@
 //old version
 // import Form from ".older/form";
 
-
+//New Version
 import "./app.css"
 import { BrowserRouter,Route,Routes,Link} from 'react-router-dom';
 import Landing from "./newComponents/starter/Landing";
@@ -12,6 +12,9 @@ import DownloadPage from "./newComponents/Download/download";
 
 function App() {
   return (
+
+    // setting Routes
+    
     <BrowserRouter>
     <main>
       <Routes>
@@ -25,13 +28,10 @@ function App() {
     </BrowserRouter>
 
     //old version
-    
     // <div>
     //   {/* <Form></Form> */}  
     // </div>
-
-
-    
+ 
   );
 }
 

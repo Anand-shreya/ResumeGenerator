@@ -1,7 +1,8 @@
-import  styled  from "styled-components";
+//Landing Page
+import styled  from "styled-components";
 import Head from "../head";
-import "./landing.css";
 import { NavLink } from 'react-router-dom'
+import "./landing.css";
 
 const Txt = styled.div`
 color: #146C94;
@@ -11,7 +12,7 @@ font-style: normal;
 font-weight: 700;
 line-height: 101.023%;
 `
-function Landing(props){
+function Landing(){
     return(
         <div className="landing_main">
             <Txt>Create your resume in </Txt>

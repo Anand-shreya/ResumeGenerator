@@ -1,14 +1,16 @@
+//Template page
 import { useState } from "react";
-import { NavLink, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import "./temp.css";
 
-//importing template images
+
+//Importing images 
 import temp1 from "./tempImg/temp1.png";
 import temp2 from "./tempImg/temp2.png";
 import temp3 from "./tempImg/temp3.png";
 
-// import Temp from "./temp";
+
 import Head from "../head";
 import UploadTemp from "../../DataHandler/uploadtemp";
 
@@ -58,12 +60,11 @@ const Txt = styled.button`
 `;
 
 function Temp_page() {
-  const [TempType, setTempType] = useState({ temp_type: "1" }); // State to handle template type
+  const [TempType, setTempType] = useState({ temp_type: "1" });                         // State to handle template type
   const navigate = useNavigate();
 
   const handleGenerate = (e) => {
     e.preventDefault();
-
     fetch("http://localhost:8000/resume", {
       method: "POST",
       headers: {
@@ -92,6 +93,7 @@ function Temp_page() {
           <img className="temp_page_img" src={temp1} alt="" />
           <Txt>Template 1</Txt>
         </TempStyle>
+
         <TempStyle
           value="2"
           onClick={(e) => {
@@ -102,6 +104,7 @@ function Temp_page() {
           <img className="temp_page_img" src={temp2} alt="" />
           <Txt>Template 2</Txt>
         </TempStyle>
+
         <TempStyle
           value="3"
           onClick={(e) => {
@@ -112,25 +115,26 @@ function Temp_page() {
           <img className="temp_page_img" src={temp3} alt="" />
           <Txt>Template 3</Txt>
         </TempStyle>
+
         <Or>OR</Or>
+
         <TempStyle
           onClick={(e) => {
             setTempType({ temp_type: "4" });
             console.log(TempType);
           }}
         >
-          <UploadTemp></UploadTemp>
+          <UploadTemp></UploadTemp>                             //To upload custom Template
           <Txt>Custom Template</Txt>
         </TempStyle>
       </div>
-      <NavLink
+      <button
         className="generate_btn"
         type="submit"
-        to="/download"
         onClick={handleGenerate}
       >
         Generate Resume
-      </NavLink>
+      </button>
     </form>
   );
 }

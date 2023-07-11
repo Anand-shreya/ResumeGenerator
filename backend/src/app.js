@@ -1,3 +1,5 @@
+//To handle backend
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const PDFServicesSdk = require("@adobe/pdfservices-node-sdk");
@@ -16,6 +18,13 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Initializing Port
 const port = process.env.PORT || 8000;
+
+
+
+
+
+
+
 
 // POST request uploadData : to upload json file data as newdata
 app.post("/uploadData", (req, res) => {
@@ -36,6 +45,10 @@ app.post("/uploadData", (req, res) => {
   });
   return;
 });
+
+
+
+
 
 
 
@@ -62,6 +75,10 @@ app.post("/uploadTemp", (req, res) => {
 
 
 
+
+
+
+
 //POST request formData : to upload filled form data
 app.post("/formData", (req, res) => {
     if (fs.existsSync("./newdata.json")) fs.unlinkSync("./newdata.json");
@@ -76,6 +93,9 @@ app.post("/formData", (req, res) => {
     }
   });
 });
+
+
+
 
 
 
@@ -96,9 +116,8 @@ app.post("/resume", (req, res) => {
   // console.log(PDF_SERVICES_CLIENT_ID);
   const credentials =
     PDFServicesSdk.Credentials.servicePrincipalCredentialsBuilder()
-      // .withClientId("PDF_SERVICES_CLIENT_ID")
-      .withClientId("6e4c841c769544a399763b2cff2bf251")
-      .withClientSecret("p8e-bIKjv39YsEWvXsHemdsT4tSmGHfBli6c")
+      .withClientId("PDF_SERVICES_CLIENT_ID")
+      .withClientSecret("PDF_SERVICES_CLIENT_SECRET")
       .build();
 
   // Create an ExecutionContext using credentials
@@ -137,6 +156,8 @@ app.post("/resume", (req, res) => {
 
 
 
+
+
 //get request dowmload : To download generated Resume
 app.get("/download", (req, res) => {
   var options = {
@@ -151,8 +172,8 @@ app.get("/download", (req, res) => {
   if (fs.existsSync("./newdata.json")) fs.unlinkSync("./newdata.json");
 
   // Removing temp4.json if exist 
-  if (fs.existsSync("./templates/temp4.docx"))
-    fs.unlinkSync("./templates/temp4.docx");
+  if (fs.existsSync("./templates/temp4.docx"))fs.unlinkSync("./templates/temp4.docx");
+
   res.sendFile("./generatedResume.pdf", options, function (e) {
     if (e) {
       console.log(e);
@@ -163,6 +184,8 @@ app.get("/download", (req, res) => {
 });
 
 
+
+//linsting
 app.listen(port, () => {
   console.log(`connection is live at port ${port}`);
 });
