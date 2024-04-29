@@ -65,7 +65,7 @@ function Temp_page() {
 
   const handleGenerate = (e) => {
     e.preventDefault();
-    fetch("http://localhost:8000/resume", {
+    fetch("https://resumegenerator-952f.onrender.com/resume", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

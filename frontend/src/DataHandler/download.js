@@ -6,7 +6,8 @@ import axios from 'axios';
 //Function for downloading RESUME
 const downloadFile = async () => {
   try {
-    const response = await axios.get('http://localhost:8000/download', {
+    // const response = await axios.get('http://localhost:8000/download', {
+      const response = await axios.get('https://resumegenerator-952f.onrender.com/download', {
       responseType: 'blob',
     });
     const downloadUrl = window.URL.createObjectURL(new Blob([response.data]));

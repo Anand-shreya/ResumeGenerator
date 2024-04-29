@@ -12,7 +12,8 @@ const UploadData = () => {
   const handleUploadClick = (e) => {
     console.log(formData);
     try {
-      fetch("http://localhost:8000/uploadData", {
+      // fetch("http://localhost:8000/uploadData", {
+        fetch("https://resumegenerator-952f.onrender.com/uploadData", {
         method: "POST",
         body: formData,
         redirect: "follow",

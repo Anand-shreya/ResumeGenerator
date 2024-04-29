@@ -62,7 +62,8 @@ function FormInput() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:8000/formData", {
+    // fetch("http://localhost:8000/formData", {
+      fetch("https://resumegenerator-952f.onrender.com/formData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
