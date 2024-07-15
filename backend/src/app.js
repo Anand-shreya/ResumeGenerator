@@ -86,7 +86,7 @@ app.post("/formData", (req, res) => {
   console.log(data);
   fs.writeFile("newdata.json", JSON.stringify(data), (err) => {
     if (err) {
-      console.error(err);
+      console.log(err);
       res.status(500).json({ error: "Failed to save data" });
     } else {
       res.json({ message: "Data saved successfully" });
