@@ -111,19 +111,23 @@ app.post("/resume", (req, res) => {
 
   const OUTPUT = "./generatedResume.pdf";
 
-        try{
-            fs.readFile("./newdata.json", 'utf8',(err, data) =>{
-              const jsondata = JSON.parse(data);
-              console.log(jsondata);
-            });
-          }
-          catch{
-            console.log("failed to load json data file");
-          }
+    //     try{
+    //         fs.readFile("./newdata.json", 'utf8',(err, data) =>{
+    //           const jsondata = JSON.parse(data);
+    //           console.log(jsondata);
+    //         });
+    //       }
+    //       catch{
+    //         console.log("failed to load json data file");
+    //       }
 
-    res.send("success");
+    // res.send("success");
   // If our output already exists, remove it so we can run the application again.
-  if (fs.existsSync(OUTPUT)) fs.unlinkSync(OUTPUT);
+  console.log(OUTPUT, "File exist: ", fs.existsSync(OUTPUT));
+  if (fs.existsSync(OUTPUT)){
+      fs.unlinkSync(OUTPUT);
+      console.log(fs.existsSync(OUTPUT));
+  }
 
   // console.log(PDF_SERVICES_CLIENT_ID);
   const credentials =
