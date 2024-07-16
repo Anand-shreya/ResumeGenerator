@@ -105,29 +105,30 @@ app.post("/resume", (req, res) => {
 
   const temp_id = req.body.temp_type;                             // tempelate id
 
-  const INPUT = `./templates/temp${temp_id}.docx`;                // input based on selected template
-
+  const INPUT = `./templates/temp${temp_id}.docx`;     
+  // input based on selected template
+  delete require.cache[require.resolve('./newdata.json')];
   const JSON_INPUT = require("./newdata.json");                   // Entered user data in json file
 
   const OUTPUT = "./generatedResume.pdf";
 
-        try{
-            fs.readFile("./newdata.json", 'utf8',(err, data) =>{
-              const JSON_INPUT = JSON.parse(data);
-              console.log("json daata", JSON_INPUT);
-            });
-          }
-          catch{
-            console.log("failed to load json data file");
+        // try{
+        //     fs.readFile("./newdata.json", 'utf8',(err, data) =>{
+        //       const JSON_INPUT = JSON.parse(data);
+        //       console.log("json daata", JSON_INPUT);
+        //     });
+        //   }
+        //   catch{
+        //     console.log("failed to load json data file");
           }
         console.log("json input", JSON_INPUT);
     // res.send("success");
   // If our output already exists, remove it so we can run the application again.
   console.log(OUTPUT, "File exist: ", fs.existsSync(OUTPUT));
-  if (fs.existsSync(OUTPUT)){
-      fs.unlinkSync(OUTPUT);
-      console.log(fs.existsSync(OUTPUT));
-  }
+  // if (fs.existsSync(OUTPUT)){
+  //     fs.unlinkSync(OUTPUT);
+  //     console.log(fs.existsSync(OUTPUT));
+  // }
 
   // console.log(PDF_SERVICES_CLIENT_ID);
   // const credentials =
