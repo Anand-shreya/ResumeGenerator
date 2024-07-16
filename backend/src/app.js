@@ -90,15 +90,6 @@ app.post("/formData", (req, res) => {
       res.status(500).json({ error: "Failed to save data" });
     } else {
       console.log("form data saved successfully!!")
-          try{
-            fs.readFile('./newdata.json', 'utf8',(err, data) =>{
-              const jsondata = JSON.parse(data);
-              console.log(jsondata);
-            });
-          }
-          catch{
-            console.log("failed to load json data file");
-          }
       res.json({ message: "Data saved successfully" });
     }
   });
@@ -120,6 +111,17 @@ app.post("/resume", (req, res) => {
 
   const OUTPUT = "./generatedResume.pdf";
 
+        try{
+            fs.readFile('./newdata.json', 'utf8',(err, data) =>{
+              const jsondata = JSON.parse(data);
+              console.log(jsondata);
+            });
+          }
+          catch{
+            console.log("failed to load json data file");
+          }
+
+    res.send("success");
   // If our output already exists, remove it so we can run the application again.
   if (fs.existsSync(OUTPUT)) fs.unlinkSync(OUTPUT);
 
