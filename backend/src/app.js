@@ -158,7 +158,7 @@ app.post("/resume", (req, res) => {
   documentMergeOperation
     .execute(executionContext)
     .then((result) => result.saveAsFile(OUTPUT))
-    .then(res.redirect("https://resume-generator-4rkpjltwn-anandshreyas-projects.vercel.app//download"))
+    // .then(res.redirect("https://resume-generator-4rkpjltwn-anandshreyas-projects.vercel.app//download"))
     .catch((err) => {
       if (
         err instanceof PDFServicesSdk.Error.ServiceApiError ||
