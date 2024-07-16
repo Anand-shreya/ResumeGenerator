@@ -114,13 +114,13 @@ app.post("/resume", (req, res) => {
         try{
             fs.readFile("./newdata.json", 'utf8',(err, data) =>{
               const jsondata = JSON.parse(data);
-              console.log(jsondata);
+              console.log("json daata", jsondata);
             });
           }
           catch{
             console.log("failed to load json data file");
           }
-        console.log(JSON_INPUT);
+        console.log("json input", JSON_INPUT);
     // res.send("success");
   // If our output already exists, remove it so we can run the application again.
   console.log(OUTPUT, "File exist: ", fs.existsSync(OUTPUT));
@@ -130,44 +130,44 @@ app.post("/resume", (req, res) => {
   }
 
   // console.log(PDF_SERVICES_CLIENT_ID);
-  const credentials =
-    PDFServicesSdk.Credentials.servicePrincipalCredentialsBuilder()
-      .withClientId("6e4c841c769544a399763b2cff2bf251")
-      .withClientSecret("p8e-bIKjv39YsEWvXsHemdsT4tSmGHfBli6c")
-      .build();
+  // const credentials =
+  //   PDFServicesSdk.Credentials.servicePrincipalCredentialsBuilder()
+  //     .withClientId("6e4c841c769544a399763b2cff2bf251")
+  //     .withClientSecret("p8e-bIKjv39YsEWvXsHemdsT4tSmGHfBli6c")
+  //     .build();
 
-  // Create an ExecutionContext using credentials
-  const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
+  // // Create an ExecutionContext using credentials
+  // const executionContext = PDFServicesSdk.ExecutionContext.create(credentials);
 
-  const documentMerge = PDFServicesSdk.DocumentMerge,
-    documentMergeOptions = documentMerge.options,
-    options = new documentMergeOptions.DocumentMergeOptions(
-      JSON_INPUT,
-      documentMergeOptions.OutputFormat.PDF
-    );
+  // const documentMerge = PDFServicesSdk.DocumentMerge,
+  //   documentMergeOptions = documentMerge.options,
+  //   options = new documentMergeOptions.DocumentMergeOptions(
+  //     JSON_INPUT,
+  //     documentMergeOptions.OutputFormat.PDF
+  //   );
 
-  // Create a new operation instance using the options instance.
-  const documentMergeOperation = documentMerge.Operation.createNew(options);
+  // // Create a new operation instance using the options instance.
+  // const documentMergeOperation = documentMerge.Operation.createNew(options);
 
-  // Set operation input document template from a source file.
-  const input = PDFServicesSdk.FileRef.createFromLocalFile(INPUT);
-  documentMergeOperation.setInput(input);
+  // // Set operation input document template from a source file.
+  // const input = PDFServicesSdk.FileRef.createFromLocalFile(INPUT);
+  // documentMergeOperation.setInput(input);
 
-  // Execute the operation and Save the result to the specified location.
-  documentMergeOperation
-    .execute(executionContext)
-    .then((result) => result.saveAsFile(OUTPUT))
-    .then(res.redirect("https://resume-generator-4rkpjltwn-anandshreyas-projects.vercel.app//download"))
-    .catch((err) => {
-      if (
-        err instanceof PDFServicesSdk.Error.ServiceApiError ||
-        err instanceof PDFServicesSdk.Error.ServiceUsageError
-      ) {
-        console.log("Exception encountered while executing operation", err);
-      } else {
-        console.log("Exception encountered while executing operation", err);
-      }
-    });
+  // // Execute the operation and Save the result to the specified location.
+  // documentMergeOperation
+  //   .execute(executionContext)
+  //   .then((result) => result.saveAsFile(OUTPUT))
+  //   .then(res.redirect("https://resume-generator-4rkpjltwn-anandshreyas-projects.vercel.app//download"))
+  //   .catch((err) => {
+  //     if (
+  //       err instanceof PDFServicesSdk.Error.ServiceApiError ||
+  //       err instanceof PDFServicesSdk.Error.ServiceUsageError
+  //     ) {
+  //       console.log("Exception encountered while executing operation", err);
+  //     } else {
+  //       console.log("Exception encountered while executing operation", err);
+  //     }
+  //   });
 });
 
 
