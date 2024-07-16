@@ -63,9 +63,9 @@ function FormInput() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // fetch("http://localhost:8000/formData", {
-      const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+      // const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
       const targetUrl = 'https://resumegenerator-952f.onrender.com/formData';
-      fetch(proxyUrl + targetUrl, {
+      fetch(targetUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
