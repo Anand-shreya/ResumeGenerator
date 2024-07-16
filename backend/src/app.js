@@ -81,7 +81,7 @@ app.post("/uploadTemp", (req, res) => {
 
 //POST request formData : to upload filled form data
 app.post("/formData", (req, res) => {
-    if (fs.existsSync("./newdata.json")) fs.unlinkSync("./newdata.json");
+  if (fs.existsSync("./newdata.json")) fs.unlinkSync("./newdata.json");
   const data = req.body;
   console.log(data);
   fs.writeFile("newdata.json", JSON.stringify(data), (err) => {
@@ -89,6 +89,7 @@ app.post("/formData", (req, res) => {
       console.log(err);
       res.status(500).json({ error: "Failed to save data" });
     } else {
+      console.log("form data saved successfully!!")
       res.json({ message: "Data saved successfully" });
     }
   });
