@@ -84,7 +84,7 @@ app.post("/formData", (req, res) => {
   if (fs.existsSync("./newdata.json")) fs.unlinkSync("./newdata.json");
   const data = req.body;
   console.log(data);
-  fs.writeFile("newdata.json", JSON.stringify(data), (err) => {
+  fs.writeFile("./newdata.json", JSON.stringify(data), (err) => {
     if (err) {
       console.log(err);
       res.status(500).json({ error: "Failed to save data" });
