@@ -72,6 +72,7 @@ function FormInput() {
       },
       body: JSON.stringify(Detail, null, 2),
     }).then((res) => {
+        console.log(res)
       alert("Successfully submited");
       navigate("/temp");
     });
