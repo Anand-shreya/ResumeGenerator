@@ -94,7 +94,7 @@ app.post("/formData", (req, res) => {
             fs.readFile('./newdata.json', 'utf8',(err, data) =>{
               const jsondata = JSON.parse(data);
               console.log(jsondata);
-            }
+            });
           }
           catch{
             console.log("failed to load json data file");
