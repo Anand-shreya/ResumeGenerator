@@ -107,7 +107,7 @@ app.post("/resume", (req, res) => {
 
   const INPUT = `./templates/temp${temp_id}.docx`;                // input based on selected template
 
-  const JSON_INPUT = require("./newdata.json");                   // Entered user data in json file
+  var JSON_INPUT = require("./newdata.json");                   // Entered user data in json file
 
   const OUTPUT = "./generatedResume.pdf";
 
