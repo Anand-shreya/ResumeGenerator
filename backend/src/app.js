@@ -107,14 +107,14 @@ app.post("/resume", (req, res) => {
 
   const INPUT = `./templates/temp${temp_id}.docx`;                // input based on selected template
 
-  var JSON_INPUT = require("./newdata.json");                   // Entered user data in json file
+  const JSON_INPUT = require("./newdata.json");                   // Entered user data in json file
 
   const OUTPUT = "./generatedResume.pdf";
 
         try{
             fs.readFile("./newdata.json", 'utf8',(err, data) =>{
-              const jsondata = JSON.parse(data);
-              console.log("json daata", jsondata);
+              const JSON_INPUT = JSON.parse(data);
+              console.log("json daata", JSON_INPUT);
             });
           }
           catch{
