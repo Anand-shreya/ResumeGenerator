@@ -158,6 +158,7 @@ app.post("/resume", (req, res) => {
   documentMergeOperation
     .execute(executionContext)
     .then((result) => result.saveAsFile(OUTPUT))
+    .then(res.json({ message: "Data saved successfully" }))
     // .then(res.redirect("https://resume-generator-4rkpjltwn-anandshreyas-projects.vercel.app//download"))
     .catch((err) => {
       if (
