@@ -66,10 +66,10 @@ function Temp_page() {
   const handleGenerate = (e) => {
     e.preventDefault();
     
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    // const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     const targetUrl = 'https://resumegenerator-952f.onrender.com/resume';
     
-    fetch(proxyUrl + targetUrl, {
+    fetch(targetUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
