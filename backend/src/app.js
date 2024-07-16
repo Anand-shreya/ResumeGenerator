@@ -112,7 +112,7 @@ app.post("/resume", (req, res) => {
   const OUTPUT = "./generatedResume.pdf";
 
         try{
-            fs.readFile(JSON_INPUT, 'utf8',(err, data) =>{
+            fs.readFile("./newdata.json", 'utf8',(err, data) =>{
               const jsondata = JSON.parse(data);
               console.log(jsondata);
             });
