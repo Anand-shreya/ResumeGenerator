@@ -125,10 +125,10 @@ app.post("/resume", (req, res) => {
     // res.send("success");
   // If our output already exists, remove it so we can run the application again.
   // console.log(OUTPUT, "File exist: ", fs.existsSync(OUTPUT));
-  // if (fs.existsSync(OUTPUT)){
-  //     fs.unlinkSync(OUTPUT);
-  //     console.log(fs.existsSync(OUTPUT));
-  // }
+  if (fs.existsSync(OUTPUT)){
+      fs.unlinkSync(OUTPUT);
+      // console.log(fs.existsSync(OUTPUT));
+  }
 
   // console.log(PDF_SERVICES_CLIENT_ID);
   const credentials =
