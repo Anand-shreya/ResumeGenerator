@@ -120,7 +120,7 @@ app.post("/resume", (req, res) => {
         //   }
         //   catch{
         //     console.log("failed to load json data file");
-          }
+          // }
         console.log("json input", JSON_INPUT);
     // res.send("success");
   // If our output already exists, remove it so we can run the application again.
